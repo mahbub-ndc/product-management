@@ -18,12 +18,32 @@ const productSchema = new Schema({
     trim: true,
     unique: true,
   },
-  description: { type: String, required: true },
-  price: { type: Number, required: true },
-  category: { type: String, required: true },
-  tags: { type: [String], required: true },
-  variants: { type: [productVariantSchema], required: true },
-  inventory: { type: inventorySchema, required: true },
+  description: {
+    type: String,
+    required: [true, "Description is required"],
+    trim: true,
+  },
+  price: { type: Number, required: true, trim: true },
+  category: {
+    type: String,
+    required: [true, "Description is required"],
+    trim: true,
+  },
+  tags: {
+    type: [String],
+    required: [true, "Description is required"],
+    trime: true,
+  },
+  variants: {
+    type: [productVariantSchema],
+    required: [true, "Description is required"],
+    trim: true,
+  },
+  inventory: {
+    type: inventorySchema,
+    required: [true, "Description is required"],
+    trim: true,
+  },
 });
 
 export const Product = model<Tproduct>("Product", productSchema);
