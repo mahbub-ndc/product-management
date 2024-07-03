@@ -19,6 +19,24 @@ const createProduct = async (req: Request, res: Response) => {
   }
 };
 
+const getAllProducts = async (req: Request, res: Response) => {
+  try {
+    const result = await productService.getAllProducts();
+    res.status(200).json({
+      success: true,
+      message: "Product created successfully!",
+      data: result,
+    });
+  } catch (error) {
+    res.status(500).json({
+      success: false,
+      message: "something went wrong",
+      error: error,
+    });
+  }
+};
+
 export const productController = {
   createProduct,
+  getAllProducts,
 };
