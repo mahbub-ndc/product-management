@@ -23,25 +23,25 @@ const productSchema = new Schema({
     required: [true, "Description is required"],
     trim: true,
   },
-  price: { type: Number, required: true, trim: true },
+  price: { type: Number, required: [true, "Price is required"], trim: true },
   category: {
     type: String,
-    required: [true, "Description is required"],
+    required: [true, "Category is required"],
     trim: true,
   },
   tags: {
     type: [String],
-    required: [true, "Description is required"],
+    required: [true, "Tags is required"],
     trime: true,
   },
   variants: {
     type: [productVariantSchema],
-    required: [true, "Description is required"],
+    required: [true, "Product variant is required"],
     trim: true,
   },
   inventory: {
     type: inventorySchema,
-    required: [true, "Description is required"],
+    required: [true, "Inventory is required"],
     trim: true,
   },
 });
