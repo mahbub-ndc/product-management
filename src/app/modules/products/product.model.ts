@@ -12,7 +12,12 @@ const inventorySchema = new Schema({
 });
 
 const productSchema = new Schema({
-  name: { type: String, required: [true, "Name is required"], trim: true },
+  name: {
+    type: String,
+    required: [true, "Name is required"],
+    trim: true,
+    unique: true,
+  },
   description: { type: String, required: true },
   price: { type: Number, required: true },
   category: { type: String, required: true },
