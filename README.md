@@ -1,4 +1,4 @@
-Product Management APIs <br/>
+Product Management APIs for postman <br/>
 Create Product(Post Method) - http://localhost:5000/api/v1/products/ <br/>
 Get all Products(Get Method) - http://localhost:5000/api/v1/products/ <br/>
 Get single Product(Get Method) http://localhost:5000/api/v1/products/6685acd83732aeb73b76e002 <br/>
