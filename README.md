@@ -8,5 +8,5 @@ Search Product(Get Method) http://localhost:5000/api/v1/products/?searchTerm=sam
 
 ***Order Management APis for Postman*** <br/>
 Create Orders(Post Method) - http://localhost:5000/api/v1/orders <br/>
-Get all Orders(Get Method) - http://localhost:5000/api/v1/products/ <br/>
+Get all Orders(Get Method) - http://localhost:5000/api/v1/orders/ <br/>
 Search orders(Get Method) http://localhost:5000/api/v1/orders?email=mahbub1716@gmail.com
