@@ -17,7 +17,13 @@ const getAllProducts = async (query: Record<string, unknown>) => {
       [field]: { $regex: searchTerm, $options: "i" },
     })),
   });
-  return result;
+
+  const meta = await Product.countDocuments();
+
+  return {
+    result,
+    meta,
+  };
 };
 
 const getSingleProduct = async (id: string) => {

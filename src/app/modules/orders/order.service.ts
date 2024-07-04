@@ -20,7 +20,11 @@ const getAllOrders = async (query: Record<string, unknown>) => {
   });
 
   const result = await searchQuery.find(query);
-  return result;
+  const meta = await Order.countDocuments();
+  return {
+    result,
+    meta,
+  };
 };
 export const orderService = {
   createOrderInDb,
