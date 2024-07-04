@@ -23,10 +23,10 @@ const createProduct = async (req: Request, res: Response) => {
 
 const getAllProducts = async (req: Request, res: Response) => {
   try {
-    const result = await productService.getAllProducts();
+    const result = await productService.getAllProducts(req.query);
     res.status(200).json({
       success: true,
-      message: "Product created successfully!",
+      message: "Product fetched successfully!",
       data: result,
     });
   } catch (error) {
