@@ -22,9 +22,15 @@ const updateSingleProduct = async (id: string, payload: Partial<Tproduct>) => {
   });
   return result;
 };
+
+const deleteSingleProduct = async (id: string) => {
+  const result = Product.findByIdAndDelete(id);
+  return result;
+};
 export const productService = {
   createProductInDb,
   getAllProducts,
   getSingleProduct,
   updateSingleProduct,
+  deleteSingleProduct,
 };
