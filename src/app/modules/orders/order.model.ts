@@ -9,8 +9,8 @@ const orderSchema = new Schema({
     trim: true,
   },
   productId: {
-    type: String,
-    required: [true, "Product Id is required"],
+    type: Schema.Types.ObjectId,
+    ref: "Product",
     trim: true,
     unique: true,
   },
