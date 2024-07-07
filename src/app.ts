@@ -8,8 +8,8 @@ const app = express();
 app.use(cors());
 app.use(express.json());
 
-app.use("/api/v1/products", productRoute.router);
-app.use("/api/v1/orders", orderRoute.router);
+app.use("/api/products", productRoute.router);
+app.use("/api/orders", orderRoute.router);
 
 app.get("/", (req: Request, res: Response) => {
   res.send("Hello World!");
