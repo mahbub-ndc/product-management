@@ -1,6 +1,5 @@
 import { Schema, model } from "mongoose";
 import { TOrder } from "./order.interface";
-import { Product } from "../products/product.model";
 
 const orderSchema = new Schema({
   email: {
@@ -28,22 +27,4 @@ const orderSchema = new Schema({
   },
 });
 
-orderSchema.pre("save", async function (next) {
-  const product = await Product.findById(this.productId);
-
-  if (
-    !product ||
-    product.inventory.quantity === undefined ||
-    product.inventory.quantity === null
-  ) {
-    throw new Error("Invalid product or quantity");
-  }
-
-  if ((this.quantity as number) > product.inventory.quantity) {
-    throw new Error("Insufficient stock");
-  }
-  product.inventory.quantity -= this.quantity as number;
-  product.inventory.inStock = product.inventory.quantity > 0;
-  next();
-});
 export const Order = model<TOrder>("Order", orderSchema);
